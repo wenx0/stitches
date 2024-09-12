@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knit Instructions Generator</title>
+</head>
+<body>
+    <h1>Knit Instructions Generator</h1>
+    <form action="/generate" method="post">
+        <label for="patternType">Choose Pattern:</label><br>
+        <select id="patternType" name="patternType">
+            <option value="sweater">Sweater</option>
+            <option value="cardigan">Cardigan</option>
+        </select><br><br>
+
+        <label for="gaugeS">Gauge Stitches (per 4x4 swatch):</label><br>
+        <input type="number" id="gaugeS" name="gaugeS" step="0.01"><br><br>
+
+        <label for="gaugeR">Gauge Rows (per 4x4 swatch):</label><br>
+        <input type="number" id="gaugeR" name="gaugeR" step="0.01"><br><br>
+
+        <label for="chestCircumference">Chest Circumference (inches):</label><br>
+        <input type="number" id="chestCircumference" name="chestCircumference" step="0.01" required><br><br>
+
+        <input type="submit" value="Generate Instructions">
+    </form>
+</body>
+</html>
