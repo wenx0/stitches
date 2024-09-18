@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knit Instructions Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knitting Pattern Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Knit Instructions Generator</h1>
-    <form action="/generate" method="post">
-        <label for="patternType">Choose Pattern:</label><br>
-        <select id="patternType" name="patternType">
-            <option value="sweater">Sweater</option>
-            <option value="cardigan">Cardigan</option>
-        </select><br><br>
+  <header>
+    <nav class="navbar">
+      <h1>Knitting Pattern Generator</h1>
+    </nav>
+  </header>
 
-        <label for="gaugeS">Gauge Stitches (per 4x4 swatch):</label><br>
-        <input type="number" id="gaugeS" name="gaugeS" step="0.01"><br><br>
+  <main>
+    <section class="form-container">
+      <h2>Customize</h2>
+      <form action="/generate" method="POST" class="pattern-form">
+        <label for="patternType">Choose a Pattern Type:</label>
+        <select name="patternType" id="patternType" required>
+          <option value="sweater">Sweater</option>
+          <option value="cardigan">Cardigan</option>
+        </select>
 
-        <label for="gaugeR">Gauge Rows (per 4x4 swatch):</label><br>
-        <input type="number" id="gaugeR" name="gaugeR" step="0.01"><br><br>
+        <label for="chestCircumference">Chest Circumference (in inches):</label>
+        <input type="number" id="chestCircumference" name="chestCircumference" step="0.1" required>
 
-        <label for="chestCircumference">Chest Circumference (inches):</label><br>
-        <input type="number" id="chestCircumference" name="chestCircumference" step="0.01" required><br><br>
+        <label for="gaugeS">Gauge (Stitches per 4 inches):</label>
+        <input type="number" id="gaugeS" name="gaugeS" step="0.1" required>
 
-        <input type="submit" value="Generate Instructions">
-    </form>
+        <label for="gaugeR">Gauge (Rows per 4 inches):</label>
+        <input type="number" id="gaugeR" name="gaugeR" step="0.1" required>
+
+        <button type="submit" class="btn-primary">Generate</button>
+      </form>
+    </section>
+       
+  </main>
+
+  <footer>
+    <p>Wendy Xie 2024</p>
+  </footer>
 </body>
 </html>
