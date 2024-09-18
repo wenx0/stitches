@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knitting Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Your Knitting Instructions</h1>
-    <pre>{{ instructions|join('\n') }}</pre>
-    <a href="/">Generate More Instructions</a>
+    <header>
+        <nav>
+            <h1>Knitting Instructions</h1>
+        </nav>
+    </header>
+    <div class="instructions">
+        <div class="instructions-box">
+            <pre>{{ instructions|join('\n') }}</pre>
+        </div>
+    </div>
+    <footer>
+        <a href="/" class="btn-primary">Generate More Instructions</a>
+    </footer>
 </body>
 </html>
